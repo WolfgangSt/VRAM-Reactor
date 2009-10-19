@@ -1,3 +1,4 @@
+#include <cstring>
 #include "display.h"
 #include "block_helper.h"
 #include "shaders.h"

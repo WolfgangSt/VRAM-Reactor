@@ -1,3 +1,4 @@
+#include <cstring>
 #include "charhelp.h"
 #include "shaders.h"
 #include "block_helper.h"

@@ -1,3 +1,4 @@
+#include <cstring>
 #include "bg.h"
 #include "block_helper.h"
 #include "fixedpoint.h"

@@ -5,7 +5,8 @@ INCLUDES =	-I. -I$(NDSE_SDK)/include
 CFLAGS =	-fPIC -g -O2 -fvisibility=hidden $(INCLUDES)
 LDFLAGS =
 
-SRCS=block_helper.cpp hq3x.cpp shader.cpp shaders.cpp \
+SRCS=bg.cpp block_helper.cpp hq3x.cpp shader.cpp shaders.cpp \
+	charhelp.cpp oam.cpp display.cpp \
 	VRAM_Reactor.cpp
 
 

@@ -1,3 +1,4 @@
+#include <cstring>
 #include "oam.h"
 #include "video/video.h"
 #include "ioregs.h"
