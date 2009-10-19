@@ -1,0 +1,3 @@
+[submodule "NDSE-SDK"]
+	path = NDSE-SDK
+	url = git://github.com/WolfgangSt/NDSE-SDK.git

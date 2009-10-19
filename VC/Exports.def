@@ -1,0 +1,6 @@
+LIBRARY
+EXPORTS
+	VideoInit2
+	Redisplay
+
+
