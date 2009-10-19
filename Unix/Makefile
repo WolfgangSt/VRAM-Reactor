@@ -2,6 +2,9 @@ ifeq ($(origin SOLUTION_DIR), undefined)
 	SOLUTION_DIR := $(shell pwd)/
 endif
 PROJECT_DIR_VRAMREACTOR := $(dir $(lastword $(MAKEFILE_LIST)))
+
+export NDSE_SDK:=$(SOLUTION_DIR)/../NDSE-SDK
+
 clean::
 	rm -f libVRAM_Reactor.so*
 	rm -f libVRAM_Reactor
