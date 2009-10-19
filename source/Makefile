@@ -14,7 +14,7 @@ OBJS	:=	$(SRCS:.cpp=.o)
 all: libVRAM_Reactor.a libVRAM_Reactor.so
 
 $(OBJS): %.o:
-	$(CC) $(CFLAGS) -c $(subst Debug/,,$*.cpp) -o $@
+	$(CC) $(CFLAGS) -c $*.cpp -o $@
 
 
 libVRAM_Reactor.a: $(OBJS)
