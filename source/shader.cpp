@@ -13,6 +13,7 @@
 
 #include "shader.h"
 
+#define ACTIVE_TEXTURE_EXT
 #define SHADER_DEBUG
 
 #ifndef _DEBUG
@@ -42,8 +43,8 @@ PFNGLFRAMEBUFFERTEXTURE2DEXTPROC glFramebufferTexture2DEXT;
 PFNGLCHECKFRAMEBUFFERSTATUSEXTPROC glCheckFramebufferStatusEXT;
 //PFNGLCOMPRESSEDTEXSUBIMAGE2DPROC glCompressedTexSubImage2D; // GL 1.3
 
-#ifdef WIN32
-PFNGLACTIVETEXTUREPROC glActiveTexture;
+#ifdef ACTIVE_TEXTURE_EXT
+PFNGLACTIVETEXTUREPROC glActiveTexture_;
 #endif
 
 #ifdef SHADER_DEBUG
@@ -138,8 +139,8 @@ void gl_shader::init()
 	load_ext(glCheckFramebufferStatusEXT, "glCheckFramebufferStatusEXT");
 	//load_ext(glCompressedTexSubImage2D, "glCompressedTexSubImage2D");
 
-#ifdef WIN32
-	load_ext(glActiveTexture, "glActiveTexture");
+#ifdef ACTIVE_TEXTURE_EXT
+	load_ext(glActiveTexture_, "glActiveTexture");
 #endif
 
 #ifdef SHADER_DEBUG
@@ -407,7 +408,7 @@ void gl_program::uniform_2f(const char *uname, GLfloat f1, GLfloat f2)
 
 void gl_program::glActiveTexture(GLenum tex)
 {
-	::glActiveTexture( tex );
+	::glActiveTexture_( tex );
 }
 
 /*
@@ -454,3 +455,4 @@ void gl_fbo::check()
 	GLenum status = glCheckFramebufferStatusEXT( GL_FRAMEBUFFER_EXT );
 	assert(status == GL_FRAMEBUFFER_COMPLETE_EXT);
 }
+
